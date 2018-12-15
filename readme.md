@@ -9,10 +9,10 @@
 package main
 
 import (
-	"fmt"
-
+    "fmt"
+    
     // import qrcode bundle library
-	"github.com/ImKK-000/quick-qrcode-bundle"
+    "github.com/ImKK-000/quick-qrcode-bundle"
 )
 
 func main() {
@@ -21,6 +21,6 @@ func main() {
     // qrcodeDecode -> return string
     qrcodeDecode, _ := qrcode.Decode(qrcodeEncode)
     // console display -> https://google.com
-	fmt.Println("qrcode content", qrcodeDecode)
+    fmt.Println("qrcode content", qrcodeDecode)
 }
 ```
