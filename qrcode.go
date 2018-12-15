@@ -1,7 +1,10 @@
 package qrcode_bundle
 
 import (
+	"bytes"
+
 	qrcode_encode "github.com/skip2/go-qrcode"
+	qrcode_decode "github.com/tuotoo/qrcode"
 )
 
 const (
@@ -36,4 +39,12 @@ func Encode(content string, recoveryLevel int, size int) ([]byte, error) {
 	recoveryLevelForEncode := convertRecoveryLevel(recoveryLevel)
 	qrcode, err := qrcode_encode.Encode(content, recoveryLevelForEncode, size)
 	return qrcode, err
+}
+
+// Decode - qrcode decoder
+func Decode(qrcode []byte) (string, error) {
+	qrcode_decode.SetDebug(false)
+	buffer := bytes.NewReader(qrcode)
+	matrix, err := qrcode_decode.Decode(buffer)
+	return matrix.Content, err
 }
