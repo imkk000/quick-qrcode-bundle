@@ -1,4 +1,4 @@
-package qrcode_bundle
+package qrcode
 
 import (
 	"bytes"
@@ -8,18 +8,19 @@ import (
 )
 
 const (
-	// RecoveryLevelLow - 7% error recovery.
+	// RecoveryLevelLow - 7% error recovery
 	RecoveryLevelLow int = iota
 
-	// RecoveryLevelMedium - 15% error recovery.
+	// RecoveryLevelMedium - 15% error recovery
 	RecoveryLevelMedium
 
-	// RecoveryLevelHigh - 25% error recovery.
+	// RecoveryLevelHigh - 25% error recovery
 	RecoveryLevelHigh
 
-	// RecoveryLevelHighest - 30% error recovery.
+	// RecoveryLevelHighest - 30% error recovery
 	RecoveryLevelHighest
 
+	// Size - default matrix size 256x256
 	Size = 256
 )
 

@@ -1,4 +1,4 @@
-package qrcode_bundle_test
+package qrcode_test
 
 import (
 	"io/ioutil"
