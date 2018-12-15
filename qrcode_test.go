@@ -10,7 +10,7 @@ import (
 
 func Test_Decode_Input_QrCode_Should_Be_Hello_QrCode(t *testing.T) {
 	expectedContent := "https://google.com"
-	qrcode, _ := Encode("https://google.com", RecoveryLevelHighest, 256)
+	qrcode, _ := Encode("https://google.com")
 
 	actualContent, _ := Decode(qrcode)
 
@@ -21,7 +21,7 @@ func Test_Decode_Input_QrCode_Should_Be_Hello_QrCode(t *testing.T) {
 func Test_Encode_Input_Text_Hello_QrCode_Should_Be_QrCode(t *testing.T) {
 	expectedQrCode, _ := ioutil.ReadFile("resources/qrcode.png")
 
-	actualQrCode, _ := Encode("https://google.com", RecoveryLevelHighest, 256)
+	actualQrCode, _ := Encode("https://google.com")
 
 	assert.Equal(t, len(expectedQrCode), len(actualQrCode))
 	assert.Equal(t, expectedQrCode, actualQrCode)

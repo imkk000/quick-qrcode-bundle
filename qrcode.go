@@ -19,6 +19,8 @@ const (
 
 	// RecoveryLevelHighest - 30% error recovery.
 	RecoveryLevelHighest
+
+	Size = 256
 )
 
 func convertRecoveryLevel(recoveryLevelIndex int) qrcode_encode.RecoveryLevel {
@@ -35,9 +37,9 @@ func convertRecoveryLevel(recoveryLevelIndex int) qrcode_encode.RecoveryLevel {
 }
 
 // Encode - qrcode encoder
-func Encode(content string, recoveryLevel int, size int) ([]byte, error) {
-	recoveryLevelForEncode := convertRecoveryLevel(recoveryLevel)
-	qrcode, err := qrcode_encode.Encode(content, recoveryLevelForEncode, size)
+func Encode(content string) ([]byte, error) {
+	recoveryLevelForEncode := convertRecoveryLevel(RecoveryLevelMedium)
+	qrcode, err := qrcode_encode.Encode(content, recoveryLevelForEncode, Size)
 	return qrcode, err
 }
 
